@@ -22,7 +22,7 @@ function Register() {
 
         if (user) {
             dispatch(add(user.email));
-            navigate('/home');
+            navigate('/');
         } else {
             alert('Password or email is incorrect');
             emailRef.current.value = null;
