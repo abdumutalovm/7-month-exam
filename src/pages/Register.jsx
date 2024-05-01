@@ -16,9 +16,7 @@ function Register() {
 
     const navigate = useNavigate();
 
-    useEffect(() => {
-        navigate('/register')
-    })
+
 
 
 
