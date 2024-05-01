@@ -38,7 +38,7 @@ function App() {
       <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
 
       {/* Protected */}
-      <Route path='/home' element={
+      <Route path='/' element={
         <ProtectedRoute isAuthentication={token ? true : false}>
           <Home></Home>
         </ProtectedRoute>
