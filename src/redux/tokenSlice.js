@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 const initialState = {
-  value: "sfdsd",
+  value: "",
 };
 
 const tokenSlice = createSlice({
