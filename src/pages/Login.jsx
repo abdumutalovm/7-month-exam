@@ -6,6 +6,7 @@ import head1 from '../assets/header/head2.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { add } from '../redux/tokenSlice';
+import { useEffect } from 'react';
 
 function Register() {
     const emailRef = useRef(null);

@@ -5,6 +5,7 @@ import logo from '../assets/header/logo.svg'
 import head1 from '../assets/header/head1.jpg'
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import { register } from '../redux/userSlice'
 
 function Register() {
