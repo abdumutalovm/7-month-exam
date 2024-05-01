@@ -14,6 +14,12 @@ function Register() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+
+    useEffect(() => {
+        navigate('/login')
+    })
+
+
     function handleSubmit(e) {
         e.preventDefault();
         let user = users.find((el) => {

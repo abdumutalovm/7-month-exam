@@ -17,6 +17,7 @@ function App() {
   const token = useSelector(state => state.token.value);
   const location = useLocation();
 
+
   useEffect(() => {
     if (!token && location.pathname != '/register') {
       navigate('/login')
