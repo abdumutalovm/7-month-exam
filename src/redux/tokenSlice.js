@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: "d",
+  value: "",
 };
 
 const tokenSlice = createSlice({
