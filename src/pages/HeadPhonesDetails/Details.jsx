@@ -11,12 +11,14 @@ import img7 from '../../assets/product-xx99-mark-two-headphones/desktop/img6.png
 import Category from '../../layout/indexCategory';
 import MainLayout from '../../layout/mainLayout';
 import Footer from '../../components/Footer';
+import { toast } from 'react-toastify';
 
 function Details() {
     const [data, setData] = useState({});
     const params = useParams();
     const navigate = useNavigate();
     const [counter, setCounter] = useState(1);
+    const [reloadPage, setReloadPage] = useState(false);
 
     function dec() {
         if (counter > 0) {
@@ -34,7 +36,6 @@ function Details() {
                 .then(res => res.json())
                 .then(data => {
                     setData(data);
-                    console.log(data);
                 })
                 .catch(err => {
                     console.log(err);
@@ -42,9 +43,14 @@ function Details() {
         } else {
             navigate('/');
         }
-    }, [params.id, navigate]);
+    }, [params.id, navigate, reloadPage]);
 
     function handleAddCart() {
+        setTimeout(() => {
+            setTimeout(() => {
+                toast.success("This product is add");
+            }, 200);
+        }, 600);
         const product = {
             id: data.id,
             name: data.name,
@@ -54,6 +60,8 @@ function Details() {
         const existingItems = JSON.parse(localStorage.getItem('cart')) || [];
         const updatedItems = [...existingItems, product];
         localStorage.setItem('cart', JSON.stringify(updatedItems));
+
+
     }
 
     function goMark1() {
@@ -69,9 +77,9 @@ function Details() {
 
 
     return (
-        <div className='bg-white w-[1440px] mx-auto'>
+        <div className='bg-white w-[1540px] mx-auto'>
             <Layout />
-            <div className='w-[1440px] mx-auto mt-[79px] px-44 '>
+            <div className='w-[1540px] mx-auto mt-[79px] px-44 '>
                 <Link to='/headphones' className='leading-6 text-[15px] hover:underline'>Go back</Link>
             </div>
 
@@ -100,7 +108,7 @@ function Details() {
             </div>
 
 
-            <div className='w-[1440px] mx-auto flex justify-between px-44'>
+            <div className='w-[1540px] mx-auto flex justify-between px-44'>
                 <div className='left w-[635px]'>
                     <h1 className='leading-9 text-black text-3xl font-semibold mb-8'>FEATURES</h1>
                     <p className='text-zinc-600 mb-[160px]'>{data?.features}</p>

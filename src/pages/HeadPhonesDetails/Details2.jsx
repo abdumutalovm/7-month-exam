@@ -11,7 +11,7 @@ import img7 from '../../assets/product-xx99-mark-one-headphones/desktop/zx9.png'
 import Category from '../../layout/indexCategory';
 import MainLayout from '../../layout/mainLayout';
 import Footer from '../../components/Footer';
-
+import { toast } from 'react-toastify';
 function Details2() {
     const [data, setData] = useState({});
     const params = useParams();
@@ -45,6 +45,11 @@ function Details2() {
     }, [params.id, navigate]);
 
     function handleAddCart() {
+        setTimeout(() => {
+            setTimeout(() => {
+                toast.success("This product is add");
+            }, 200);
+        }, 600);
         const product = {
             id: data.id,
             name: data.name,
@@ -67,7 +72,7 @@ function Details2() {
     }
 
     return (
-        <div className='bg-white w-[1440px] mx-auto'>
+        <div className='bg-white w-[1540px] mx-auto'>
             <Layout />
             <div className='w-[1440px] mx-auto mt-[79px] px-44 '>
                 <Link to='/headphones' className='leading-6 text-[15px] hover:underline'>Go back</Link>

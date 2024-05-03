@@ -15,14 +15,13 @@ import Category from '../../layout/indexCategory';
 import MainLayout from '../../layout/mainLayout';
 import Footer from '../../components/Footer';
 
+import { toast } from 'react-toastify';
+
 function Details3() {
     const [data, setData] = useState({});
     const params = useParams();
     const navigate = useNavigate();
     const [counter, setCounter] = useState(1);
-
-
-
 
     useEffect(() => {
         if (params.id) {
@@ -52,6 +51,11 @@ function Details3() {
     }
 
     function handleAddCart() {
+        setTimeout(() => {
+            setTimeout(() => {
+                toast.success("This product is add");
+            }, 200);
+        }, 600);
         const product = {
             id: data.id,
             name: data.name,
@@ -76,7 +80,7 @@ function Details3() {
     }
 
     return (
-        <div className='bg-white w-[1440px] mx-auto'>
+        <div className='bg-white w-[1540px] mx-auto'>
             <Layout />
             <div className='w-[1440px] mx-auto mt-[79px] px-44 '>
                 <Link to='/headphones' className='leading-6 text-[15px] hover:underline'>Go back</Link>

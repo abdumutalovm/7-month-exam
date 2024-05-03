@@ -57,14 +57,14 @@ function Headphones() {
 
 
     return (
-        <div className='w-[1440px] mx-auto'>
+        <div className='w-[1540px] mx-auto'>
             <Layout></Layout>
-            <div className='w-[1440px] mx-auto px-44 py-[97px] bg-black'>
+            <div className='w-[1540px] mx-auto px-44 py-[97px] bg-black'>
                 <h1 className='text-center text-white mt-46 text-semibold text-5xl tracking-[2px] leading-[44px]'>HEADPHONES</h1>
             </div>
 
 
-            <div className='bg-white flex items-center justify-between w-[1440px] px-44 py-44 mx-auto'>
+            <div className='bg-white flex items-center justify-between w-[1540px] px-44 py-44 mx-auto'>
                 <div className='image'>
                     <img src={img1} alt="headphone img" />
                 </div>
@@ -79,7 +79,7 @@ function Headphones() {
             </div>
 
 
-            <div className='bg-white flex items-center justify-between w-[1440px] px-44 mx-auto'>
+            <div className='bg-white flex items-center justify-between w-[1540px] px-44 mx-auto'>
                 <div className='about-product w-[445px]'>
                     <h2 className='font-Manrope tracking-[2px] font-semibold text-black leading-[44px] text-[40px]'>
                         {secondProduct?.name}
@@ -94,7 +94,7 @@ function Headphones() {
 
             </div>
 
-            <div className='bg-white flex items-center justify-between w-[1440px] px-44 pt-44 mx-auto'>
+            <div className='bg-white flex items-center justify-between w-[1540px] px-44 pt-44 mx-auto'>
 
                 <div className='image'>
                     <img src={img3} alt="headphone img" />

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/header/logo.svg'
-import basket from '../assets/header/basket.svg'
 import bg_headphone from '../assets/header/Bitmap.png'
 import zx9 from '../assets/section/zx9.png'
 import zx7 from '../assets/section/zx7.png'
@@ -10,36 +9,27 @@ import zx9bg from '../assets/section/zx9-bg.png'
 import Category from '../layout/indexCategory'
 import MainLayout from '../layout/mainLayout'
 import Footer from '../components/Footer'
+import Header_Basket from '../components/Header_Basket'
 
 function Home() {
+
+
     return (
-        <div className='w-[1440px] bg-[#131313] mx-auto '>
+        <div className='w-[1540px] bg-[#131313] mx-auto '>
 
             <header className=' flex items-center justify-between border border-l-0 border-t-0 border-r-0  px-44  border-b-2 border-zinc-700 py-8'>
-                <div className='header-logo'>
-                    <Link to='/home'><img src={logo} alt="company logo" /></Link>
+                <div className='header-logo mr-24'>
+                    <Link to='/'><img src={logo} alt="company logo" /></Link>
                 </div>
 
-                <div className='header-menu flex items-center gap-9 text-sm mr-36'>
+                <div className='header-menu justify-center flex items-center gap-10 text-sm mr-14'>
                     <Link to='/home' className='font-Manrope hover:text-orange-400'>HOME</Link>
                     <Link to='/headphones' className='font-Manrope hover:text-orange-400'>HEADPHONES</Link>
                     <Link to='/speakers' className='font-Manrope hover:text-orange-400'>SPEAKERS</Link>
                     <Link to='/earphones' className='font-Manrope hover:text-orange-400'>EARPHONES</Link>
                 </div>
 
-                <div className="header-basket">
-                    <button onClick={() => document.getElementById('my_modal_2').showModal()}><img src={basket} alt="basket img" className='hover:opacity-75' /></button>
-
-                    <dialog id="my_modal_2" className="modal">
-                        <div className="modal-box">
-                            <h3 className="font-bold text-lg">Hello!</h3>
-                            <p className="py-4">Press ESC key or click outside to close</p>
-                        </div>
-                        <form method="dialog" className="modal-backdrop">
-                            <button>close</button>
-                        </form>
-                    </dialog>
-                </div>
+                <Header_Basket></Header_Basket>
 
             </header>
 
@@ -64,7 +54,7 @@ function Home() {
 
             <Category></Category>
 
-            <section className='w-[1440px] relative bg-white mx-auto px-44 pb-[48px]'>
+            <section className='w-[1540px] relative bg-white mx-auto px-44 pb-[48px]'>
                 <div className=''>
                     <div className='bg-[#D87D4A] w-[1110px] rounded-xl'>
                         <img src={zx9bg} alt="image" />
@@ -82,7 +72,7 @@ function Home() {
             </section>
 
 
-            <section className='w-[1440px] bg-white mx-auto px-44 pb-[200px]'>
+            <section className='w-[1540px] bg-white mx-auto px-44 pb-[200px]'>
                 <div className='w-[1110px] relative rounded-xl right-[200px]'>
                     <img src={zx7} alt="" className='mx-auto absolute left-[200px] rounded-xl' />
                     <h1 className='absolute font-bold top-[110px] tracking-[2px] left-[320px] leading-[38px] text-[28px] text-black'>ZX7 SPEAKER

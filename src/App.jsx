@@ -18,6 +18,7 @@ import Detail1 from './pages/EarphonesDetail/Detail1'
 
 import DetailS1 from './pages/SpeakersDetail/Detail1'
 import DetailS2 from './pages/SpeakersDetail/Detail2'
+import CheckOut from './pages/CheckOut'
 
 
 function App() {
@@ -62,6 +63,8 @@ function App() {
         <Speakers></Speakers>
       }></Route>
 
+      <Route path='/checkout' element={<CheckOut></CheckOut>}></Route>
+
       <Route path='/product/:id' element={<Details></Details>}></Route>
 
       <Route path='/product2/:id' element={<Details2></Details2>}></Route>
@@ -73,6 +76,7 @@ function App() {
       <Route path='/product7/:id' element={<DetailS1></DetailS1>}></Route>
 
       <Route path='/product8/:id' element={<DetailS2></DetailS2>}></Route>
+
 
     </Routes>
 

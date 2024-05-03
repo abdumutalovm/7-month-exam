@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 function Category() {
     return (
-        <section className='w-[1440px] mx-auto bg-white px-44 pt-56 pb-[200px]'>
+        <section className='w-[1540px] mx-auto bg-white px-44 pt-56 pb-[200px]'>
 
             <div className='flex items-center justify-between'>
                 <div className='w-[350px] flex flex-col relative items-center justify-between h-[204px] text-center bg-[#F1F1F1] rounded-md'>

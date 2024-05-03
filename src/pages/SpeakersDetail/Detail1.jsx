@@ -16,6 +16,8 @@ import Category from '../../layout/indexCategory';
 import MainLayout from '../../layout/mainLayout';
 import Footer from '../../components/Footer';
 
+import { toast } from 'react-toastify';
+
 function Detail1() {
     const [data, setData] = useState({});
     const params = useParams();
@@ -49,6 +51,11 @@ function Detail1() {
     }, [params.id, navigate]);
 
     function handleAddCart() {
+        setTimeout(() => {
+            setTimeout(() => {
+                toast.success("This product is add");
+            }, 200);
+        }, 600);
         const product = {
             id: data.id,
             name: data.name,
@@ -73,13 +80,13 @@ function Detail1() {
 
 
     return (
-        <div className='bg-white w-[1440px] mx-auto'>
+        <div className='bg-white w-[1540px] mx-auto'>
             <Layout />
-            <div className='w-[1440px] mx-auto mt-[79px] px-44 '>
+            <div className='w-[1540px] mx-auto mt-[79px] px-44 '>
                 <Link to='/headphones' className='leading-6 text-[15px] hover:underline'>Go back</Link>
             </div>
 
-            <div className='bg-white flex items-center justify-between w-[1440px] px-44 mt-20 mx-auto'>
+            <div className='bg-white flex items-center justify-between w-[1540px] px-44 mt-20 mx-auto'>
                 <div className='image mb-[160px]'>
                     <img src={img1} alt="headphone img" />
                 </div>
@@ -104,7 +111,7 @@ function Detail1() {
             </div>
 
 
-            <div className='w-[1440px] mx-auto flex justify-between px-44'>
+            <div className='w-[1540px] mx-auto flex justify-between px-44'>
                 <div className='left w-[635px]'>
                     <h1 className='leading-9 text-black text-3xl font-semibold mb-8'>FEATURES</h1>
                     <p className='text-zinc-600 mb-[160px]'>{data?.features}</p>

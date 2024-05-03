@@ -1,19 +1,16 @@
-import React, { useReducer, useRef } from 'react'
+import React, { useRef } from 'react';
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import logo from '../assets/header/logo.svg'
-import head1 from '../assets/header/head1.jpg'
+import logo from '../assets/header/logo.svg';
+import head1 from '../assets/header/head1.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { register } from '../redux/userSlice'
+import { register } from '../redux/userSlice';
 
 function Register() {
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
-
     const dispatch = useDispatch();
-
     const navigate = useNavigate();
 
     function handleSubmit(e) {
@@ -21,16 +18,15 @@ function Register() {
         const user = {
             email: emailRef.current.value,
             password: passwordRef.current.value
-        }
+        };
         localStorage.setItem('user', JSON.stringify(user));
 
-        dispatch(register(user))
-        emailRef.current.value = null
-        passwordRef.current.value = null
+        dispatch(register(user));
+        emailRef.current.value = null;
+        passwordRef.current.value = null;
 
         navigate('/login');
     }
-
 
     return (
         <div>
@@ -40,13 +36,11 @@ function Register() {
                     <img src={head1} alt="" className='w-[500px] animate-pulse' />
                 </div>
 
-
                 <div className="abouts mx-16">
                     <h1 className='text-3xl mb-5 text-white'><span className='text-orange-400'>W</span>elcome <span className='text-orange-400'>B</span>ack !</h1>
                     <p className='w-[400px] mb-10 text-xl'>Buy audio devices from <span className='text-orange-400'>audiophile</span> and enjoy bright and quality sound, very high quality products only from us</p>
                     <span className='relative'><MdEmail className='absolute top-[1px] left-3 text-xl'></MdEmail><input ref={emailRef} type="email" placeholder='hakeem@example.com' className='w-full indent-7 p-3 border-b-1 border-orange-400 rounded-t-xl border outline-orange-400' /> </span>
                     <span className='relative'><FaLock className='absolute top-[1px] left-3 text-xl'></FaLock  ><input ref={passwordRef} type="password" placeholder='123example' className='w-full indent-7 p-3 border-b-1 border-orange-400 rounded-b-xl border outline-orange-400' /> </span>
-
 
                     <div className="form-control mt-6">
                         <div className="flex items-center gap-5 justify-between">
@@ -64,7 +58,7 @@ function Register() {
                 </div>
             </form >
         </div >
-    )
+    );
 }
 
-export default Register
+export default Register;
