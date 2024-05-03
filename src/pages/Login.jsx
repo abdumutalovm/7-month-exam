@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { add } from '../redux/tokenSlice';
 import { useEffect } from 'react';
 
+
 function Register() {
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
@@ -15,6 +16,12 @@ function Register() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    useEffect(() => {
+        const storedUserData = localStorage.getItem('userData');
+        if (storedUserData) {
+            navigate('/');
+        }
+    }, []);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -30,6 +37,7 @@ function Register() {
             emailRef.current.value = null;
             passwordRef.current.value = null
         }
+
     }
 
     return (

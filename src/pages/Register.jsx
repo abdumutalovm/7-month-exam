@@ -16,11 +16,6 @@ function Register() {
 
     const navigate = useNavigate();
 
-
-
-
-
-
     function handleSubmit(e) {
         e.preventDefault();
         const user = {
@@ -34,8 +29,6 @@ function Register() {
         passwordRef.current.value = null
 
         navigate('/login');
-
-
     }
 
 

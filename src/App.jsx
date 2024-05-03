@@ -9,8 +9,16 @@ import Headphones from './pages/Headphones'
 import Speakers from './pages/Speakers'
 import Earphones from './pages/Earphones'
 import ErrorPage from './pages/ErrorPage'
-import Layout from './layout/index'
 import { useSelector } from 'react-redux'
+import Details from './pages/HeadPhonesDetails/Details'
+import Details2 from './pages/HeadPhonesDetails/Details2'
+import Details3 from './pages/HeadPhonesDetails/Details3'
+
+import Detail1 from './pages/EarphonesDetail/Detail1'
+
+import DetailS1 from './pages/SpeakersDetail/Detail1'
+import DetailS2 from './pages/SpeakersDetail/Detail2'
+
 
 function App() {
   const navigate = useNavigate();
@@ -45,15 +53,27 @@ function App() {
         </ProtectedRoute>
       }>
       </Route>
-      <Route path='/headphones' element={<Layout>
-        <Headphones></Headphones>
-      </Layout>}></Route>
-      <Route path='/earphones' element={<Layout>
+      <Route path='/headphones' element={
+        <Headphones></Headphones>}></Route>
+      <Route path='/earphones' element={
         <Earphones></Earphones>
-      </Layout>}></Route>
-      <Route path='/speakers' element={<Layout>
+      }></Route>
+      <Route path='/speakers' element={
         <Speakers></Speakers>
-      </Layout>}></Route>
+      }></Route>
+
+      <Route path='/product/:id' element={<Details></Details>}></Route>
+
+      <Route path='/product2/:id' element={<Details2></Details2>}></Route>
+
+      <Route path='/product3/:id' element={<Details3></Details3>}></Route>
+
+      <Route path='/product4/:id' element={<Detail1></Detail1>}></Route>
+
+      <Route path='/product7/:id' element={<DetailS1></DetailS1>}></Route>
+
+      <Route path='/product8/:id' element={<DetailS2></DetailS2>}></Route>
+
     </Routes>
 
   )
